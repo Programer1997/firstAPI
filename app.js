@@ -2,7 +2,7 @@
 const container = document.querySelector('.display');
 
 
-function getTodos (){
+function getListElements (){
 
 fetch ('https://jsonplaceholder.typicode.com/todos')
 .then((response) => response.json())
@@ -10,7 +10,7 @@ fetch ('https://jsonplaceholder.typicode.com/todos')
 
     let newCards = "";
 
-    for(i=0;i<=4;i++){
+    for(i=0;i<=9;i++){
         console.log(data[i])
 
         let object = data[i];
@@ -38,36 +38,9 @@ fetch ('https://jsonplaceholder.typicode.com/todos')
 
 }
 
-getTodos();
+getListElements();
 
 
 
-////////////////////////////////////////////
-/*fetch("https://newsapi.org/v2/everything" +
-    `?q=${searchIn}` +
-    `&language=${language}` +
-    `&pageSize=${pageSize}` +
-    `&apiKey=${APIKEY}`
-    )
-    .then(res => res.json())
-    .then(data => {
-        let news = data.articles;
-        let newCards = "";
-        news.forEach((item) => {
-            let date = new Date(item.publishedAt);
-            newCards += `
-                <div class="card">
-                    <img width="100%" src="${item.urlToImage ? item.urlToImage : "./assets/noimage.jpg"}" />
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
-                    <p><b>Date:</b> ${date.toDateString()}</p>
-                    <a id="goto-btn" href="${item.url}">Go to News</a>
-                </div>
-            `;
-        })
-        container.innerHTML = newCards;
-    })
-    .catch(err => console.log(err));
-}
-*/
+
 
